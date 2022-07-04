@@ -13,4 +13,7 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
-run ArtistsController
+use AccountsController
+use ArtsController
+use ArtistsController
+use BuyersController

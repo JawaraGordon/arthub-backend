@@ -2,7 +2,7 @@ puts "🌱 Seeding..."
 
 # Seed your database here
 
-10.times do 
+5.times do 
         
  artist = Artist.create(
     name: Faker::Name.name,
@@ -10,14 +10,36 @@ puts "🌱 Seeding..."
     location: Faker::Address.country,
     email: Faker::Internet.email,
     phone: Faker::PhoneNumber.phone_number,
-    genre: Faker::Music.genre
+    genre: "Digital Art"
+        )
+    end
+5.times do 
+        
+ artist = Artist.create(
+    name: Faker::Name.name,
+    avatar: Faker::Avatar.image,
+    location: Faker::Address.country,
+    email: Faker::Internet.email,
+    phone: Faker::PhoneNumber.phone_number,
+    genre: "Oil on Canvas"
+        )
+    end
+5.times do 
+        
+ artist = Artist.create(
+    name: Faker::Name.name,
+    avatar: Faker::Avatar.image,
+    location: Faker::Address.country,
+    email: Faker::Internet.email,
+    phone: Faker::PhoneNumber.phone_number,
+    genre: "Mixed Media"
         )
     end
 
 5.times do 
  art = Art.create(
     name: Faker::Books::CultureSeries.culture_ship,
-    image_url: Faker::Avatar.image,
+    image_url: "https://source.unsplash.com/random",
     genre: "Music NFT",
     location: Faker::Address.country,
     link: Faker::Internet.domain_name,
@@ -28,7 +50,7 @@ puts "🌱 Seeding..."
 5.times do 
  art = Art.create(
     name: Faker::Books::CultureSeries.culture_ship,
-    image_url: Faker::Avatar.image,
+    image_url: "https://source.unsplash.com/random",
     genre: "1/1 Art NFT",
     location: Faker::Address.country,
     link: Faker::Internet.domain_name,
@@ -39,7 +61,7 @@ puts "🌱 Seeding..."
 5.times do 
  art = Art.create(
     name: Faker::Books::CultureSeries.culture_ship,
-    image_url: Faker::Avatar.image,
+    image_url: "https://source.unsplash.com/random",
     genre: "1/1 Photography NFT",
     location: Faker::Address.country,
     link: Faker::Internet.domain_name,
