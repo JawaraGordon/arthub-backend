@@ -1,119 +1,84 @@
-# Phase 3 Project Guidelines
+# ArtHub
 
-## Learning Goals
+Find digitals art and music projects. 
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
+Search for your favorite artists. Join the community as a member or as an artist by uploading your own art projects.  
 
-## Introduction
+## Description
 
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
+A React app that uses a Ruby backend to search for artists, art projects and memberships with an API.
 
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
+Use the navigation bar to display different components of the app. Choices include: 
 
-## Requirements
+## Challenges
 
-For this project, you must:
+- Creating an API to communicate with the frontend allowing for CRUD capabilities using ActiveRecord was the toughest part of this project. 
 
-- Use Active Record to interact with a database.
-- Have at least two models with a one-to-many relationship.
-- At a minimum, set up the following API routes in Sinatra:
-  - create and read actions for both models
-  - full CRUD capability for one of the models
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
+- In the future I want to add a login function .
 
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
+### How to Install Project
 
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+- Fork and clone both the "arthub" front end and backend repos from GitHub
+# Dependencies
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+- Backend: in the command line type $bundle install
 
-## Getting Started
+- Backend: in the command line type $rake server
+This will run your server on port http://localhost:9292
 
-### Backend Setup
+- Frontend: in the command line type $npm install react-router-dom@5.3.0
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+- Frontend: in the command line type $npm install -g
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+- Frontend: in the command line type $npm start 
+This will run your app on port http://localhost:3000
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
+# Navigating the application
+- Use the navbar to move between areas of the app
 
-You can start your server with:
+- Account: See all active users
 
-```console
-$ bundle exec rake server
+- Artists: View and search for artists
+
+- Buyers: Become a member of the community
+
+- Gallery: View a gallery of NFT art projects 
+
+## Setup
+
+`src` folder contains the following files:
+
+```txt
+src/
+├── index.css
+├── index.js
+└── components/
+    ├── Accounts.js
+    ├── AccountsCard.js
+    ├── AddArt.js
+    ├── App.js
+    ├── Art.js
+    ├── ArtCard.js
+    ├── Artists.js
+    ├── ArtistsCard.js
+    ├── Buyers.js
+    ├── Header.js
+    ├── NavBar.js
+    └── Search.js
 ```
 
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
+### index.js
 
-### Frontend Setup
-
-Your backend and your frontend should be in **two different repositories**.
-
-Create a new repository in a **separate folder** with a React app for your
-frontend. To do this, `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
-
-```console
-$ npx create-react-app my-app-frontend
-```
-
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
-
-### Fetch Example
-
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
-
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
-
-## Project Tips
-
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
+`index.js` loads the `BrowserRouter` component from React Router, as well as `App` as the top level component.
 
 ## Resources
 
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
+- [React Router](https://v5.reactrouter.com/web/guides/quick-start)
 
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 [dbdiagram.io]: https://dbdiagram.io/
+
 [postman download]: https://www.postman.com/downloads/
+
 [network tab]: https://developer.chrome.com/docs/devtools/network/
