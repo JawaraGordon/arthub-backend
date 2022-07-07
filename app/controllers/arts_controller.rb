@@ -6,15 +6,15 @@ class ArtsController < ApplicationController
       end
    
     post "/art" do 
-      # serialize(Art.create(art_params))
-      Art.create(art_params)
+      serialize(Art.create(art_params))
+      
     end
 
-    # patch "/art/:id" do
-    #     art = Art.find(params[:id])
-    #     art.update(art_params)
-    #     serialize(art)
-    #   end
+    patch "/art/:id" do
+        art = Art.find(params[:id])
+        art.update(art_params)
+        serialize(art)
+      end
   
     delete "/art/:id" do 
       art = Art.find(params[:id])
@@ -22,22 +22,22 @@ class ArtsController < ApplicationController
       serialize(art)
     end
   
-    # private 
+    private 
   
    
     def art_params
-      allowed_params = %w(name image_url genre location link art_ids)
+      allowed_params = %w(name image_url genre location link artist_id)
       params.select {|param,value| allowed_params.include?(param)}
     end
   
-    # def serialize(objects)
-    #   objects.to_json(
-    #     include: {
-    #       art: {
-    #         only: [:id, :name, :image_url, :genre, :location, :link]
-    #       }
-    #     }
-    #   )
-    # end
+    def serialize(objects)
+      objects.to_json(
+        include: {
+          artist: {
+            only: [:id, :name, :image_url, :genre, :location, :link, :artist_id]
+          }
+        }
+      )
+    end
   end
   

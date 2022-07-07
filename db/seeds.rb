@@ -3,8 +3,7 @@ puts "🌱 Seeding..."
 # Seed your database here
 
 5.times do 
-        
- artist = Artist.create(
+    Artist.create(
     name: Faker::Name.name,
     avatar: Faker::Avatar.image,
     location: Faker::Address.country,
@@ -14,8 +13,7 @@ puts "🌱 Seeding..."
         )
     end
 5.times do 
-        
- artist = Artist.create(
+    Artist.create(
     name: Faker::Name.name,
     avatar: Faker::Avatar.image,
     location: Faker::Address.country,
@@ -25,8 +23,7 @@ puts "🌱 Seeding..."
         )
     end
 5.times do 
-        
- artist = Artist.create(
+    Artist.create(
     name: Faker::Name.name,
     avatar: Faker::Avatar.image,
     location: Faker::Address.country,
@@ -37,7 +34,7 @@ puts "🌱 Seeding..."
     end
 
 5.times do 
- art = Art.create(
+    Art.create(
     name: Faker::Books::CultureSeries.culture_ship,
     image_url: "https://source.unsplash.com/random",
     genre: "Music NFT",
@@ -48,30 +45,30 @@ puts "🌱 Seeding..."
         )
     end      
 5.times do 
- art = Art.create(
+    Art.create(
     name: Faker::Books::CultureSeries.culture_ship,
     image_url: "https://source.unsplash.com/random",
     genre: "1/1 Art NFT",
     location: Faker::Address.country,
     link: Faker::Internet.domain_name,
     created_at: Faker::Time.backward(days: 14, period: :evening),
-    artist_id: Artist.first.id
+    artist_id: Artist.second.id
         )
     end      
 5.times do 
- art = Art.create(
+    Art.create(
     name: Faker::Books::CultureSeries.culture_ship,
     image_url: "https://source.unsplash.com/random",
     genre: "1/1 Photography NFT",
     location: Faker::Address.country,
     link: Faker::Internet.domain_name,
     created_at: Faker::Time.backward(days: 14, period: :evening),
-    artist_id: Artist.first.id
+    artist_id: Artist.third.id
         )
     end      
 
  10.times do 
- buyer = Buyer.create(
+    Buyer.create(
     name: Faker::Name.name,
     avatar: Faker::Avatar.image,
     location: Faker::Address.country,
@@ -80,9 +77,7 @@ puts "🌱 Seeding..."
     end
 
  5.times do 
-    # arr = ["Free", "Paid", "Artist"]
-    # account_type = arr.shuffle
- account = Account.create(
+    Account.create(
     name: Faker::Name.name,
     account_number: Faker::Number.number(digits: 10),
     password: Faker::Number.leading_zero_number(digits: 10),
@@ -94,30 +89,26 @@ puts "🌱 Seeding..."
     end
 
  5.times do 
-    # arr = ["Free", "Paid", "Artist"]
-    # account_type = arr.shuffle
- account = Account.create(
+    Account.create(
     name: Faker::Name.name,
     account_number: Faker::Number.number(digits: 10),
     password: Faker::Number.leading_zero_number(digits: 10),
     location: Faker::Address.country,
     account_type: "Paid",
-    art_id: Art.first.id,
-    buyer_id: Buyer.first.id
+    art_id: Art.second.id,
+    buyer_id: Buyer.second.id
         )
     end
 
  5.times do 
-    # arr = ["Free", "Paid", "Artist"]
-    # account_type = arr.shuffle
- account = Account.create(
+    Account.create(
     name: Faker::Name.name,
     account_number: Faker::Number.number(digits: 10),
     password: Faker::Number.leading_zero_number(digits: 10),
     location: Faker::Address.country,
     account_type: "Artist",
-    art_id: Art.first.id,
-    buyer_id: Buyer.first.id
+    art_id: Art.third.id,
+    buyer_id: Buyer.third.id
         )
     end
 
