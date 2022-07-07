@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_01_004643) do
+ActiveRecord::Schema.define(version: 2022_07_07_192125) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2022_07_01_004643) do
     t.string "avatar"
     t.string "location"
     t.string "email"
+    t.string "account_type"
   end
 
   add_foreign_key "accounts", "arts"

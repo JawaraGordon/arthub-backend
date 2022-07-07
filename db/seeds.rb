@@ -67,12 +67,33 @@ puts "🌱 Seeding..."
         )
     end      
 
- 10.times do 
+ 5.times do 
     Buyer.create(
     name: Faker::Name.name,
     avatar: Faker::Avatar.image,
     location: Faker::Address.country,
-    email: Faker::Internet.email
+    email: Faker::Internet.email,
+    account_type: "Free"
+        )
+    end
+
+ 5.times do 
+    Buyer.create(
+    name: Faker::Name.name,
+    avatar: Faker::Avatar.image,
+    location: Faker::Address.country,
+    email: Faker::Internet.email,
+    account_type: "Paid $4.99 Monthly"
+        )
+    end
+
+ 5.times do 
+    Buyer.create(
+    name: Faker::Name.name,
+    avatar: Faker::Avatar.image,
+    location: Faker::Address.country,
+    email: Faker::Internet.email,
+    account_type: "Artist"
         )
     end
 
