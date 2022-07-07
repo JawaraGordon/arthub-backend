@@ -12,15 +12,15 @@ class BuyersController < ApplicationController
 private 
 
 def buyer_params
-    allowed_params = %w(name image_url genre location link artist_id)
+    allowed_params = %w(name avatar email location account_type)
     params.select {|param,value| allowed_params.include?(param)}
   end
 
   def serialize(objects)
     objects.to_json(
       include: {
-        artist: {
-          only: [:id, :name, :image_url, :genre, :location, :link, :artist_id]
+        accounts: {
+          only: [:id, :name, :avatar, :email, :location, :account_type]
         }
       }
     )
