@@ -9,6 +9,12 @@ class BuyersController < ApplicationController
         serialize(Buyer.create(buyer_params))
       end
 
+      delete "/buyers/:id" do 
+        buyer = Buyer.find(params[:id])
+        buyer.destroy 
+        serialize(buyer)
+      end
+
 private 
 
 def buyer_params
