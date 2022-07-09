@@ -1,7 +1,5 @@
 puts "🌱 Seeding..."
 
-# Seed your database here
-
 5.times do 
     Artist.create(
     name: Faker::Name.name,
